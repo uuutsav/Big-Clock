@@ -1,0 +1,13 @@
+h3 {
+    display: inline;
+    padding: 1rem;
+}
+
+.header {
+    width: 100%;
+    padding: 1rem 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: black;
+}
