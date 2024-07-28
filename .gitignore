@@ -33,3 +33,10 @@ typings/
 
 # Yarn Integrity file
 .yarn-integrity
+
+# temp files
+temp.jsx
+temp.css
+temp.module.css
+One.jsx
+Two.jsx

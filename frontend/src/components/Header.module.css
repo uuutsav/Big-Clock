@@ -1,0 +1,39 @@
+.header {
+    height: 15vh;
+    display: flex;
+    align-items: center;
+}
+nav{
+    border-radius: 0.5rem;
+    margin: auto;
+    width: 90vw;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--def-bg-secondary);
+    color: var(--def-color);
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.logo {
+    font-size: 1.5rem;
+}
+
+.options {
+    width: 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.iconUser {
+    font-size: 1.5rem;
+    padding: auto 0;
+}
+.iconExpand {
+    font-size: 1.5rem;
+    padding: auto 0;
+
+}

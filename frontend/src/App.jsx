@@ -1,15 +1,19 @@
 import { useState } from 'react'
-import './App.css'
-import { Clock } from './componenets/Clock'
-import Header from './componenets/Header'
+import styles from './App.module.css'
+import Clock from './components/Clock'
+import Header from './components/Header'
+
 function App() {
-  
 
   return (
     <>
-    <Header></Header>
-    <Clock></Clock>
-    
+      <div className={styles.main}>
+        <Header></Header>
+        <Clock></Clock>
+      </div>
+      <div className={styles.footer}>
+
+      </div>
     </>
   )
 }
