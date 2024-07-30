@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import styles from './Clock.module.css'
 
+var lastIntervalID = 0;
+
 function Clock() {
     const [hour, setHour] = useState('-1');
     const [min, setMin] = useState('-1');
@@ -10,6 +12,7 @@ function Clock() {
     const minuteRef = useRef();
     const secondRef = useRef();
 
+
     const setTime = () => {
         const currentTime = new Date();
         setHour(currentTime.getHours());
@@ -18,30 +21,33 @@ function Clock() {
     }
     
     useEffect(() => {
-
         setTime();
-        setInterval(() => {
+        lastIntervalID = setInterval(() => {
             setTime();
-            console.log(`refreshed $(refreshTime)`);
+            console.log(`refreshed ${refreshTime}`);
         }, refreshTime)
-    }, [])
+    }, [refreshTime])
 
     const handleHourClick = () => {
-        console.log("click")
+        // console.log("click")
         minuteRef.current.style.display = 'inline-block';
         secondRef.current.style.display = 'inline-block';
+        clearInterval(lastIntervalID);
         setRefreshTime(1000)
     }
 
     const handleMinuteClick = () => {
-        console.log("min")
+        // console.log("min")
         minuteRef.current.style.display = 'none';
+        secondRef.current.style.display = 'none';
+        clearInterval(lastIntervalID);
         setRefreshTime(60*60*1000)
     }
 
     const handleSecondClick = () => {
-        console.log("sec")
+        // console.log("sec")
         secondRef.current.style.display = 'none';
+        clearInterval(lastIntervalID);
         setRefreshTime(60*1000); 
     }
 

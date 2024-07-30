@@ -11,19 +11,19 @@
 }
 .hour:hover {
     transition: 500ms;
-    font-size: 35vh;
+    font-size: 45vh;
     cursor: pointer;
-    border: solid 23px rgba(0, 128, 0, 0.05);
+    color: rgba(255, 255, 255, 1);
 }
 .minute:hover {
     transition: 500ms;
     font-size: 35vh;
     cursor: pointer;
-    border: solid 23px rgba(255, 0, 0, 0.05);
+    color: rgba(255, 0, 0, 0.23);
 }
 .second:hover {
     transition: 500ms;
     font-size: 35vh;
     cursor: pointer;
-    border: solid 23px rgba(255, 0, 0, 0.05);
+    color: rgba(255, 0, 0, 0.23);
 }
