@@ -23,17 +23,22 @@ nav{
 }
 
 .options {
-    width: 5rem;
+    width: 5.5rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 .iconUser {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     padding: auto 0;
 }
 .iconExpand {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     padding: auto 0;
+}
 
+.iconExpand:hover {
+    font-size: 2rem;
+    color: var(--hover-dark-color);
+    transition: 300ms;
 }

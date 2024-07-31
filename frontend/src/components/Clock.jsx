@@ -12,7 +12,6 @@ function Clock() {
     const minuteRef = useRef();
     const secondRef = useRef();
 
-
     const setTime = () => {
         const currentTime = new Date();
         setHour(currentTime.getHours());

@@ -1,6 +1,7 @@
 .clock {
     height: 85vh;
     font-size: 40vh;
+    color: var(--def-color);
     display: flex;
 }
 
@@ -10,20 +11,20 @@
     font-family: '';
 }
 .hour:hover {
-    transition: 500ms;
+    transition: 800ms;
     font-size: 45vh;
     cursor: pointer;
-    color: rgba(255, 255, 255, 1);
+    color: var(--hover-dark-color);
 }
 .minute:hover {
-    transition: 500ms;
+    transition: 800ms;
     font-size: 35vh;
     cursor: pointer;
-    color: rgba(255, 0, 0, 0.23);
+    color: var(--hover-light-color);
 }
 .second:hover {
-    transition: 500ms;
+    transition: 800ms;
     font-size: 35vh;
     cursor: pointer;
-    color: rgba(255, 0, 0, 0.23);
+    color: var(--hover-light-color);
 }
