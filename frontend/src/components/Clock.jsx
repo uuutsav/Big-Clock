@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import styles from './Clock.module.css'
 
-var lastIntervalID = 0;
+var lastIntervalID = null;
 
 function Clock() {
     const [hour, setHour] = useState('-1');
@@ -18,13 +18,19 @@ function Clock() {
         setMin(currentTime.getMinutes());
         setSec(currentTime.getSeconds());
     }
-    
+
     useEffect(() => {
         setTime();
         lastIntervalID = setInterval(() => {
             setTime();
-            console.log(`refreshed ${refreshTime}`);
+            // console.log(`refreshed ${refreshTime}`);
         }, refreshTime)
+
+        return () => {
+            if (lastIntervalID) {
+                clearInterval(lastIntervalID);
+            }
+        }
     }, [refreshTime])
 
     const handleHourClick = () => {
@@ -40,14 +46,16 @@ function Clock() {
         minuteRef.current.style.display = 'none';
         secondRef.current.style.display = 'none';
         clearInterval(lastIntervalID);
-        setRefreshTime(60*60*1000)
+        lastIntervalID = null;
+        setRefreshTime(60 * 60 * 1000)
     }
 
     const handleSecondClick = () => {
         // console.log("sec")
         secondRef.current.style.display = 'none';
         clearInterval(lastIntervalID);
-        setRefreshTime(60*1000); 
+        lastIntervalID = null;
+        setRefreshTime(60 * 1000);
     }
 
     return (

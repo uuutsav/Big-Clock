@@ -1,10 +1,20 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styles from './Header.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee, faExpand, faUser } from '@fortawesome/free-solid-svg-icons'
 
-function Header({ refBody }) {
+function Header({ refBody, isIdle }) {
     const [isFullScreen, setIsFullScreen] = useState(false);
+
+    const refHeader = useRef();
+
+    useEffect(() => {
+        if (isIdle){
+            refHeader.current.style.display = "none"
+        } else {
+            refHeader.current.style.display = "flex"
+        }
+    })
 
     const handleExpand = () => {
         if (!isFullScreen) {
@@ -16,7 +26,7 @@ function Header({ refBody }) {
             } else if (refBody.current.msRequestFullscreen) {
                 refBody.current.msRequestFullscreen(); //IE11
             } else {
-                console.log("not hehe")
+                // console.log("not hehe")
             }
 
             setIsFullScreen(true);
@@ -29,7 +39,7 @@ function Header({ refBody }) {
 
     return (
         <div className={styles.header}>
-            <nav>
+            <nav ref={refHeader}>
                 <div className={styles.logo}>
                     <h3>Big Clock</h3>
                 </div>
