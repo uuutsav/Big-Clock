@@ -3,13 +3,13 @@ import styles from './Header.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee, faExpand, faUser } from '@fortawesome/free-solid-svg-icons'
 
-function Header({ refBody, isIdle }) {
+function Header({ refBody, isIdle, setModeClock, setModeStopwatch, setModeTimer }) {
     const [isFullScreen, setIsFullScreen] = useState(false);
 
     const refHeader = useRef();
 
     useEffect(() => {
-        if (isIdle){
+        if (isIdle) {
             refHeader.current.style.display = "none"
         } else {
             refHeader.current.style.display = "flex"
@@ -42,6 +42,23 @@ function Header({ refBody, isIdle }) {
             <nav ref={refHeader}>
                 <div className={styles.logo}>
                     <h3>Big Clock</h3>
+                </div>
+                <div className={styles.modes}>
+                    <a onClick={() => {
+                        setModeStopwatch(true);
+                        setModeClock(false);
+                        setModeTimer(false)
+                    }}>Stopwatch</a>
+                    <a onClick={() => {
+                        setModeStopwatch(false);
+                        setModeClock(true);
+                        setModeTimer(false)
+                    }}>Clock</a>
+                    <a onClick={() => {
+                        setModeStopwatch(false);
+                        setModeClock(false);
+                        setModeTimer(true)
+                    }}>Timer</a>
                 </div>
                 <div className={styles.options}>
                     <FontAwesomeIcon icon={faExpand} className={styles.iconExpand} onClick={handleExpand} />

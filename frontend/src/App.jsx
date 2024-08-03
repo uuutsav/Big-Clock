@@ -4,11 +4,16 @@ import Header from './components/Header'
 import styles from './App.module.css'
 
 import _ from 'lodash'
+import Stopwatch from './components/Stopwatch'
+import Timer from './components/Timer'
 
 let timeoutID = null;
 
 function App() {
   const [isIdle, setIsIdle] = useState(false);
+  const [modeClock, setModeClock] = useState(true);
+  const [modeStopwatch, setModeStopwatch] = useState(false);
+  const [modeTimer, setModeTimer] = useState(false);
 
   const refBody = useRef();
 
@@ -45,8 +50,10 @@ function App() {
   return (
     <div ref={refBody}>
       <div className={styles.main}>
-        <Header isIdle={isIdle} refBody={refBody}></Header>
-        <Clock></Clock>
+        <Header isIdle={isIdle} refBody={refBody} setModeClock={setModeClock} setModeStopwatch={setModeStopwatch} setModeTimer={setModeTimer}></Header>
+        {modeClock && <Clock /> }
+        {modeStopwatch && <Stopwatch />}
+        {modeTimer && <Timer />}
       </div>
       <div className={styles.footer}>
 

@@ -1,0 +1,32 @@
+.stopwatch {
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 90vw;
+    margin: 0 auto;
+}
+
+.stopwatch p {
+    font-size: 40vh;
+    margin: 0 auto;
+}
+
+.ms {
+    font-size: 30vh;
+}
+
+.buttons {
+    font-size: 20vh;
+    margin: 1rem auto;
+}
+
+.button {
+    margin: 0 3rem;
+    transition: 300ms;
+}
+.button:hover {
+    transform: scale(1.15);
+    transition: 300ms;
+}
+
