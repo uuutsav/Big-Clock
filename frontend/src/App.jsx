@@ -51,7 +51,7 @@ function App() {
     <div ref={refBody}>
       <div className={styles.main}>
         <Header isIdle={isIdle} refBody={refBody} setModeClock={setModeClock} setModeStopwatch={setModeStopwatch} setModeTimer={setModeTimer}></Header>
-        {modeClock && <Clock /> }
+        {modeClock && <Clock />}
         {modeStopwatch && <Stopwatch />}
         {modeTimer && <Timer />}
       </div>
@@ -63,3 +63,7 @@ function App() {
 }
 
 export default App
+
+/*
+TODO: Timer.jsx
+*/

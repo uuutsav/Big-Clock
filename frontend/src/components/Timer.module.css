@@ -1,0 +1,62 @@
+.display {
+    height: 85vh;
+    margin: 0vw 5vw;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--def-bg-secondary);
+}
+
+.digits{
+    flex: 8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* not working */
+    height: 80%; /*Centering vertically requires a height */
+    text-align: center;
+    /* gap: 1rem; */
+    overflow: hidden;
+
+}
+
+.one {
+    font-size: 5rem;
+    opacity: 40%;
+}
+
+.two {
+    font-size: 7rem;
+    opacity: 80%;
+}
+
+.three {
+    font-size: 10rem;
+}
+
+.buttons {
+    flex: 2;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    font-size: 8rem;
+}
+
+.playpause {
+    transition: 200ms;
+}
+
+.playpause:hover {
+    color: var(--hover-dark-color);
+    transform: scale(1.15);
+    transition: 300ms;
+}
+
+.stop {
+    transition: 200ms;
+}
+
+.stop:hover {
+    color: var(--hover-dark-color);
+    transform: scale(1.15);
+    transition: 300ms;
+}
